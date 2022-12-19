@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BatterySmart</string>
+    <string name="search_country">Search country</string>
+    <string name="search_city">Search City</string>
+    <string name="add_money_to_wallet">Add money to your wallet and\n make payment</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="recommended">Recommended</string>
+    <string name="_5000">5000</string>
+    <string name="_8000">8000</string>
+    <string name="_10000">10000</string>
+    <string name="payment_mode">Payment Mode</string>
+    <string name="online">Online</string>
+    <string name="_upi">UPI</string>
+    <string name="_cancel">Cancel</string>
+    <string name="_submit">Submit</string>
+    <string name="_recharge">Recharge</string>
+</resources>

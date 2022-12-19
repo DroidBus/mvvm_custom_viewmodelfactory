@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_30dp">
+
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope"
+        android:text="@string/add_money_to_wallet"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:background="@drawable/gradient_rounded_input"
+        android:hint="@string/enter_amount"
+        android:padding="@dimen/_10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label" />
+
+
+    <TextView
+        android:id="@+id/tv_recommended"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:fontFamily="@font/manrope"
+        android:text="@string/recommended"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_amount" />
+
+    <TextView
+        android:id="@+id/first_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:background="@drawable/gradient_rounded_input"
+        android:paddingStart="@dimen/_20dp"
+        android:paddingTop="@dimen/_10dp"
+        android:paddingEnd="@dimen/_20dp"
+        android:paddingBottom="@dimen/_10dp"
+        android:text="@string/_5000"
+        app:layout_constraintEnd_toStartOf="@+id/second_amount"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/tv_recommended"
+        app:layout_constraintTop_toBottomOf="@+id/tv_recommended" />
+
+    <TextView
+        android:id="@+id/second_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_rounded_input"
+        android:paddingStart="@dimen/_20dp"
+        android:paddingTop="@dimen/_10dp"
+        android:paddingEnd="@dimen/_20dp"
+        android:paddingBottom="@dimen/_10dp"
+        android:text="@string/_8000"
+        app:layout_constraintBottom_toBottomOf="@+id/first_amount"
+        app:layout_constraintEnd_toStartOf="@+id/third_amount"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/first_amount"
+        app:layout_constraintTop_toTopOf="@+id/first_amount" />
+
+    <TextView
+        android:id="@+id/third_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_rounded_input"
+        android:paddingStart="@dimen/_20dp"
+        android:paddingTop="@dimen/_10dp"
+        android:paddingEnd="@dimen/_20dp"
+        android:paddingBottom="@dimen/_10dp"
+        android:text="@string/_10000"
+        app:layout_constraintBottom_toBottomOf="@+id/second_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/second_amount"
+        app:layout_constraintTop_toTopOf="@+id/second_amount" />
+
+
+    <TextView
+        android:id="@+id/tv_payment_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:fontFamily="@font/manrope"
+        android:text="@string/payment_mode"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/first_amount" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/online"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/online"
+        android:clickable="true"
+        android:buttonTint="@color/space_blue"
+        app:layout_constraintStart_toStartOf="@id/tv_payment_mode"
+        app:layout_constraintTop_toBottomOf="@id/tv_payment_mode" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/upi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20dp"
+        android:text="@string/_upi"
+        app:layout_constraintStart_toEndOf="@id/online"
+        app:layout_constraintTop_toBottomOf="@id/tv_payment_mode" />
+
+
+    <TextView
+        android:id="@+id/btn_cancel"
+        android:layout_width="0dp"
+        android:fontFamily="@font/manrope"
+        android:textColor="@color/space_blue"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_rounded_input"
+        android:paddingStart="@dimen/_20dp"
+        android:layout_marginEnd="@dimen/_10dp"
+        android:paddingTop="@dimen/_10dp"
+        android:paddingEnd="@dimen/_20dp"
+        android:paddingBottom="@dimen/_10dp"
+        android:text="@string/_cancel"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/btn_submit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/online" />
+
+    <TextView
+        android:id="@+id/btn_submit"
+        android:layout_width="0dp"
+        android:fontFamily="@font/manrope"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_button_violet"
+        android:paddingStart="@dimen/_20dp"
+        android:paddingTop="@dimen/_10dp"
+        android:paddingEnd="@dimen/_20dp"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_10dp"
+        android:text="@string/_recharge"
+        android:textColor="@color/white"
+        android:layout_marginStart="@dimen/_10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/online" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
