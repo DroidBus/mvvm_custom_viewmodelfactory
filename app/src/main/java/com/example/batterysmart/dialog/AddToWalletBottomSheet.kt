@@ -16,4 +16,13 @@ class AddToWalletBottomSheet : DialogFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.layout_payment_bottomsheet, container)
     }
+
+
+    companion object {
+        fun newInstance(): AddToWalletBottomSheet {
+            val fragment = AddToWalletBottomSheet()
+            return fragment
+        }
+
+    }
 }

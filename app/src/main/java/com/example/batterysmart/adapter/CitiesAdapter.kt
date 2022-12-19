@@ -4,16 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.batterysmart.databinding.LayoutCountriesAdapterItemBinding
-import com.example.batterysmart.listener.CountryClickListiner
-import com.example.batterysmart.model.CountryResponse
+import com.example.batterysmart.listener.CityClickListener
 
-class CountriesAdapter(private val countryClickListiner: CountryClickListiner,private var countryResponse: ArrayList<CountryResponse>) :
-    RecyclerView.Adapter<CountriesAdapter.ViewHolder>() {
+class CitiesAdapter(private val cityClickListiner: CityClickListener, private var citiesResponse: ArrayList<String>) :
+    RecyclerView.Adapter<CitiesAdapter.ViewHolder>() {
 
 
-    fun filterList(arrayList: ArrayList<CountryResponse>){
-        if(arrayList!=null&&arrayList.isNotEmpty()) {
-            countryResponse = arrayList
+    fun filterList(arrayList: ArrayList<String>) {
+        if (arrayList != null && arrayList.isNotEmpty()) {
+            citiesResponse = arrayList
             notifyDataSetChanged()
         }
     }
@@ -24,17 +23,17 @@ class CountriesAdapter(private val countryClickListiner: CountryClickListiner,pr
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val countryResponse = countryResponse.get(position)
-        if (countryResponse?.country != null)
-            holder.binding.textView.text = countryResponse.country
+        val city = citiesResponse.get(position)
+        if (city != null)
+            holder.binding.textView.text = city
 
         holder.binding.root.setOnClickListener {
-            countryClickListiner.onCountryClick(countryResponse.country)
+            cityClickListiner.onCityClick(city)
         }
     }
 
     override fun getItemCount(): Int {
-        return countryResponse.size
+        return citiesResponse.size
 
     }
 
