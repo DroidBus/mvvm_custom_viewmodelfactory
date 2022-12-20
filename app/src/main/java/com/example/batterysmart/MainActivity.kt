@@ -128,9 +128,12 @@ class MainActivity : AppCompatActivity(), CountryClickListiner, CityClickListene
     private fun filterCities(text: String?) {
         val filteredCitylist = ArrayList<String>()
         for (item in cities) {
-            if (item.equals(text)) {
+            if (text?.lowercase(Locale.getDefault())
+                    ?.let { item.toLowerCase()?.contains(it) } == true
+            ){
                 filteredCitylist.add(item)
             }
+
         }
         if (filteredCitylist.isEmpty()) {
             Toast.makeText(this, "No Data Found..", Toast.LENGTH_SHORT).show()
