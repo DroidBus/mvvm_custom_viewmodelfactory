@@ -144,11 +144,8 @@ class MainActivity : AppCompatActivity(), CountryClickListiner, CityClickListene
         binding.countryView.setQuery(country, false);
         binding.cityView.visibility = ViewGroup.VISIBLE
         binding.recyclerViewCountry.visibility = ViewGroup.VISIBLE
-        for(i in 0 until countries.size){
-            if(countries.get(i).country.equals(country)){
-                countries.get(i).cities?.let { cities.addAll(it) }
-            }
-        }
+
+        getCitiesForCountry(country)
 
         if (cities != null && cities.isNotEmpty()) {
             val linearLayoutManager = LinearLayoutManager(this,
@@ -165,7 +162,17 @@ class MainActivity : AppCompatActivity(), CountryClickListiner, CityClickListene
         }
     }
 
+
+    fun getCitiesForCountry(country:String?){
+        for(i in 0 until countries.size){
+            if(countries.get(i).country.equals(country)){
+                countries.get(i).cities?.let { cities.addAll(it) }
+            }
+        }
+    }
+
     override fun onCityClick(city: String?) {
+        binding.recyclerViewCountry.visibility= ViewGroup.GONE
     AddToWalletBottomSheet.newInstance().show(supportFragmentManager, "AddToWalletBottomSheet.class")
     }
 
