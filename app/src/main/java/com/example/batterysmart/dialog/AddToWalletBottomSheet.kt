@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.batterysmart.R
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class AddToWalletBottomSheet : DialogFragment() {
+class AddToWalletBottomSheet : BottomSheetDialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
