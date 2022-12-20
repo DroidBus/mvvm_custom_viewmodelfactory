@@ -24,13 +24,14 @@ import com.example.batterysmart.viewmodelfactory.MyViewModelFactory
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity(), CountryClickListiner, CityClickListener {
 
     lateinit var countryViewModel: CountryViewModel
     lateinit var countries: ArrayList<CountryResponse>
-    lateinit var cities: ArrayList<String>
+     var cities: ArrayList<String> = ArrayList()
     lateinit var binding: ActivityMainBinding
     lateinit var adapter: CountriesAdapter
     lateinit var citiesAdapter: CitiesAdapter
@@ -165,10 +166,11 @@ class MainActivity : AppCompatActivity(), CountryClickListiner, CityClickListene
 
     fun getCitiesForCountry(country:String?){
         for(i in 0 until countries.size){
-            if(countries.get(i).country.equals(country)){
-                countries.get(i).cities?.let { cities.addAll(it) }
+            if(countries.get(i).country.equals(country)&&countries.get(i).cities!=null){
+                cities.addAll(countries.get(i).cities!!)
             }
-        }
+            }
+
     }
 
     override fun onCityClick(city: String?) {
