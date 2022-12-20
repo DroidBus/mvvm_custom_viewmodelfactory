@@ -66,6 +66,7 @@ class MainActivity : AppCompatActivity(), CountryClickListiner, CityClickListene
         })
         binding.countryView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String?): Boolean {
+                binding.recyclerViewCountry.visibility= ViewGroup.VISIBLE
                 filter(newText)
                 return false
             }
@@ -78,6 +79,7 @@ class MainActivity : AppCompatActivity(), CountryClickListiner, CityClickListene
 
         binding.cityView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String?): Boolean {
+                binding.recyclerViewCountry.visibility= ViewGroup.VISIBLE
                 filterCities(newText)
                 return false
             }
